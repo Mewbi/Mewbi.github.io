@@ -1,19 +1,10 @@
-.modal-content { 
-    background-color: rgb(25, 25, 25) !important; 
-}
-
-.text-justify {
-    text-align: justify;
-}
-
-body {
-    color: aliceblue;
-    font-family: 'Courier New', Courier, monospace;
-    background-color: rgb(25, 25, 25);
+html, body {
+    height: 100%;
+    overflow-y: scroll;
 }
 
 a {
-    color: aliceblue;
+    color:rgb(25, 25, 25);
     cursor: pointer;
     text-decoration: none;
 }
@@ -22,6 +13,50 @@ a:hover {
     color: rgb(100, 100, 100);
 }
 
-img {
-    width: 20%;
+button:hover {
+    color: rgb(100, 100, 100);
+}
+
+.swal-title {
+    background-color: rgba(0,0,0,0.70);
+    text-align: left;
+    font-size: 16px;
+    font-style: bold;
+    color: aliceblue;
+}
+
+.swal-title:first-child {
+    margin-top: 0px;
+}
+
+.swal-modal {
+    margin: 0px;
+    background-color: rgb(229,231,235);
+    text-align: left;
+}
+
+.swal-text {
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+
+.swal-footer {
+    margin: 0px;
+    position: absolute;
+    left: 87%;
+    top: -8px;
+}
+
+.swal-button {
+    background-color: rgb(248, 88, 88);
+    width: 25px;
+    height: 25px;
+    border-radius: 50px;
+    text-align: center;
+    padding: 0px;
+}
+
+.swal-button:not([disabled]):hover {
+    background-color: rgb(248, 88, 88);
 }

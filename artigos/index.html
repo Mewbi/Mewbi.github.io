@@ -1,34 +1,42 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <title>/home/felipe/artigos</title>
-    <link rel="icon" href="../assets/favicon.png">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" href="/assets/favicon.png">
     <link rel="stylesheet" href="../css/style.css" type="text/css">
-    <script src="../js/main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 
-<body>
-    <div class="container-md mt-5">
-        <div class="text-center">
-            <h1><a href="../index.html">/home/felipe</a>/artigos</h1>
-            <hr>
+<body class="bg-gray-50 font-mono">
+    <div class="flex flex-col mx-auto max-w-screen-md h-full px-4 pt-16">
+
+        <div class="shadow-xl z-10">
+            <div class="flex flex-row rounded-tr-md rounded-tl-md px-4 h-10 bg-black opacity-70">
+                <div class="flex my-auto font-bold text-md text-white pt-1 opacity-100"><a href="/index.html">/home/felipe</a>/artigos</div>
+                <div class="flex flex-col w-6 h-6 ml-auto my-auto rounded-full bg-red-600">
+                    <div class="my-auto text-xs text-white font-thin text-center"><a href="/index.html">x</a></div>
+                </div>
+            </div>
+            <div class="flex flex-col text-md text-justify bg-gray-100 border border-gray-700 rounded-br-md rounded-bl-md p-4">
+                <p class="pb-2">&emsp;Conteúdos técnicos voltados para a área de tecnologia</p>
+                <a href="#">&emsp;> Sample title</a>
+                <a href="#">&emsp;> Sample title 2</a>
+            </div>
         </div>
 
-        <div class="row">
-            <div class="col-4 align-self-center text-center">
-                <h4><a href="#">Sample Title</a></h4>
-            </div>
-            <div class="col text-justify me-5">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ornare in ligula vitae maximus. Ut tempus erat in mollis pellentesque. Curabitur sodales velit neque, quis dapibus nisi condimentum ac. Quisque imperdiet ex ante. Suspendisse feugiat risus dui, id porta lectus pellentesque quis. Nulla dolor sapien, porta non porta ut, mattis sed nulla. Proin vestibulum lacus fermentum leo fermentum rutrum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam scelerisque libero vel sapien aliquam, varius vehicula tortor auctor. Ut efficitur tellus eget ipsum tristique tempus.
-                </p>    
-            </div>
+        <div class="flex mt-auto mx-auto pb-4 pt-4 fa-lg z-10">
+            <a target="_blank" href="https://github.com/Mewbi"><i class="fab fa-github">&emsp;</i></a>
+            <a target="_blank" href="https://www.linkedin.com/in/felipe-fernandes-449b6219b/"><i class="fab fa-linkedin-in">&emsp;</i></a>
+            <a onclick="contact('mail')"><i class="fab fa-google">&emsp;</i></a>
+            <a onclick="contact('discord')"><i class="fab fa-discord">&emsp;</i></a>
         </div>
-        <hr>
     </div>
+
+    <script src="../js/main.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
+
 </html>
