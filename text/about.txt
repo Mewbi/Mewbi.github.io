@@ -1,0 +1,7 @@
+Me chamo Felipe Fernandes, atualmente tenho $idade anos, sou um Desenvolvedor Backend interessado em tecnologias que envolvam performance, volumetria e soluções CLI.
+
+Tenho experiência profissional de Software Engineer em CDN (Content Delivery Network), sistemas distribuidos e produtos de segurança. Trabalhando em soluções performáticas e escaláveis, capazes de processar centenas de milhões de requisições por dia. Quanto à tecnologias, utilizei bastante Golang, Lua, Redis, MySQL e Openresty. Contudo, também gosto de criar scripts utilizando Shell Script.
+
+Possuo formação em Técnico de Redes de Computadores pelo SENAI Roberto Simonsen. Atualmente curso Ciência e Tecnologia na Universidade Federal do ABC, onde também desenvolvo projeto de Iniciação Científica na área de Matemática Aplicada sobre Otimização de Superficie de Energia Potencial.
+
+Estou sempre disposto para conversar sobre projetos milaborantes ou sobre ideiais. Então caso tenha interesse, fique a vontade para entrar em contato :)
