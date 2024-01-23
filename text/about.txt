@@ -1,7 +1,7 @@
-My name is Felipe Fernandes, I'm currently $idade years old, I'm a Backend Developer interested in technologies that involve performance, volumetrics data and CLI solutions.
+Hello, I'm Felipe, currently $idade years old, and I specialize in Backend Development with a keen interest in cutting-edge technologies related to performance optimization, volumetric data, and CLI solutions.
 
-I have professional experience as a Software Engineer in CDN (Content Delivery Network), distributed systems and security products. Working on performant and scalable solutions, capable of processing hundreds of millions of requests per day. I have experience using Golang, Lua, Redis, MySQL and Openresty. I also like to create scripts using Shell Script.
+With a solid professional background as a Software Engineer, I've honed my skills in Content Delivery Networks (CDN), distributed systems, and security products. My expertise lies in crafting high-performance and scalable solutions capable of efficiently handling hundreds of millions of requests per day. I am proficient in Golang, Lua, Redis, MySQL, and Openresty, and I enjoy creating scripts using Shell Script.
 
-I have a technical course in Computer Network from SENAI Roberto Simonsen. I'm undergraduate student of Science and Technology at the Federal University of ABC, where I'm also developing a Scientific Research project in the area of Applied Mathematics about Optimization of Molecular Geometry.
+I hold a technical course in Computer Network from SENAI Roberto Simonsen and am pursuing my undergraduate studies in Science and Technology at the Federal University of ABC. Additionally, I'm engaged in a Scientific Research project in the field of Applied Mathematics, focusing on the Optimization of Molecular Geometry.
 
-I'm always able to talk. So if you're interested, feel free to get in touch :)
+I'm always open for a conversation, so if you're interested, please feel free to reach out :)

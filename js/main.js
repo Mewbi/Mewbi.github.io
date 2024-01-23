@@ -66,7 +66,7 @@ function getElemId(elem) {
 }
 
 function show(type){
-  const allTypes = ['projects', 'about-me', 'cli']; 
+  const allTypes = document.allTypes; 
 
   for (let i = 0; i < allTypes.length; i++) {
     if (allTypes[i] != type) {
@@ -78,6 +78,8 @@ function show(type){
         let text = elem.textContent.replace('_', '>').replace(' ▉', '');
         elem.innerText = text;
       }
+    }else {
+      document.showPosition = i;
     }
   }
 
@@ -173,7 +175,6 @@ function populateProjects(elem, data) {
   obj.projects.forEach(project => {
     const c = createProjectElement(project);
     elem.appendChild(c);
-    console.log(project);
   });
 }
 
@@ -302,7 +303,48 @@ function typewriterAnimation(elem) {
   })
 }
 
+function moveCursor(key) {
+  let down = false;
+  let up = false;
+
+  key = key.toLowerCase()
+
+  switch (key) {
+    case 'arrowdown' :
+    case 'j':
+    case 's':
+      down = true;
+      break;
+
+    case 'arrowup':
+    case 'k':
+    case 'w':
+      up = true;
+      break;
+
+    default:
+      return;
+  }
+
+  let position = document.showPosition;
+  let types =  document.allTypes;
+  if (position === undefined) {
+    position = 0;
+  }else if (down) {
+    position -= 1;
+  }else if (up) {
+    position += 1;
+  }
+
+  if (position < 0 || position > types.length - 1) {
+    return;
+  }
+
+  show(types[position]);
+}
+
 document.addEventListener('DOMContentLoaded', function() {
+ document.allTypes = ['projects', 'about-me', 'cli'];
 
   // Populate about me content
   const elemAbout = document.getElementById('about-me');
@@ -326,4 +368,11 @@ document.addEventListener('DOMContentLoaded', function() {
       show('cli');
     }
   }, delayMillisec);
+
+  // Vim Navegation
+  document.addEventListener('keyup', function(event) {
+    const key = event.key;
+    moveCursor(key);
+  });
 }, false);
+

@@ -1,5 +1,5 @@
   Fatecnologia Lab
 
-A lab created to show in Fatecnologia event, about the usage of Rate Limit to mitigate DDoS attacks
+A lab created to show in Fatecnologia event, about the usage of Rate Limit to mitigate DDoS attacks.
 
 Repository: https://github.com/gocachebr/fatecnologia-lab

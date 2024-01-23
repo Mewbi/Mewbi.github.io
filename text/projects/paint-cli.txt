@@ -1,5 +1,5 @@
   Paint CLI
 
-A paint that able you create images directly from terminal
+A paint that able you create images directly from terminal.
 
 Repository: https://github.com/Mewbi/Paint-CLI
