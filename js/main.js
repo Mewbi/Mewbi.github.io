@@ -66,7 +66,7 @@ function getElemId(elem) {
 }
 
 function show(type){
-  const allTypes = ['projetos', 'sobre-mim', 'cli']; 
+  const allTypes = ['projects', 'about-me', 'cli']; 
 
   for (let i = 0; i < allTypes.length; i++) {
     if (allTypes[i] != type) {
@@ -134,6 +134,47 @@ function insertTextInElement(elem, text) {
     html += `<p>&emsp;${line}</p>`
   })
   elem.innerHTML = html
+}
+
+function createProjectElement(data) {
+  const elem = document.createElement("div");
+  elem.classList.add("flex", "flex-row");
+
+  const divText = document.createElement("div");
+  divText.classList.add("flex", "flex-col", "my-auto", "pl-3", "w-full");
+
+  const aText = document.createElement("a");
+  aText.classList.add("pb-2");
+  aText.target = "_blank";
+  aText.href = data.url;
+  aText.innerHTML = `> ${data.name} <i class="fab fa-github"></i>`
+
+  const pText = document.createElement("p");
+  pText.innerHTML = `&emsp;&emsp;${data.description}`;
+
+  divText.appendChild(aText);
+  divText.appendChild(pText);
+
+  const divImage = document.createElement("div");
+  divImage.classList.add("flex", "flex-col", "my-auto", "p-3", "w-1/3");
+
+  const img = document.createElement("img");
+  img.src = data.image;
+
+  divImage.appendChild(img);
+  elem.appendChild(divText);
+  elem.appendChild(divImage)
+
+  return elem;
+}
+
+function populateProjects(elem, data) {
+  const obj = JSON.parse(data);
+  obj.projects.forEach(project => {
+    const c = createProjectElement(project);
+    elem.appendChild(c);
+    console.log(project);
+  });
 }
 
 function fallbackCopyTextToClipboard(text) {
@@ -264,13 +305,18 @@ function typewriterAnimation(elem) {
 document.addEventListener('DOMContentLoaded', function() {
 
   // Populate about me content
-  const c = document.getElementById('sobre-mim');
+  const elemAbout = document.getElementById('about-me');
   let content = readTextFile('/text/about.txt');
   const dateBirth = new Date("11/01/2001"); 
   const dateNow   = new Date(); 
   const yearsOld  = Math.floor( (dateNow - dateBirth) / (1000 * 3600 * 24 * 365) );
   content = content.replace('$idade', yearsOld);
-  insertTextInElement(c, content)
+  insertTextInElement(elemAbout, content)
+
+  // Populate about me content
+  const elemProjects = document.getElementById('projects');
+  content = readTextFile('/text/projects.json');
+  populateProjects(elemProjects, content);
 
   // Show CLI mode
   const delayMillisec = 1000;

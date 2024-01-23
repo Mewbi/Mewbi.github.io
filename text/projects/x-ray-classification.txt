@@ -1,0 +1,5 @@
+  X Ray Classification
+
+API using AI to classify torax X-Ray between 3 different diseases
+
+Repository: https://github.com/Mewbi/x-ray-classification

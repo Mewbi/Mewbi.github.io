@@ -124,7 +124,7 @@ interface_home() {
     local pos_x="4"
     local pos_y=$((n * 2 + 1))
     set_cursor "${pos_y}" "${pos_x}" 
-    echo -n "${n} - ${opt}"
+    echo -n "${n}) ${opt}"
     ((n++))
   done
 
@@ -154,7 +154,7 @@ interface_about_me() {
     local pos_x="4"
     local pos_y="5"
     set_cursor "${pos_y}" "${pos_x}"
-    echo -n "> Got and error"
+    echo -n "> Got an error"
   
     local footer="Press ENTER to continue"
     local pos_x=$((c / 2))
@@ -179,7 +179,7 @@ interface_about_me() {
   local now=$(date +%s)
   local age=$(( (${now} - ${birth} ) / 31536000 ))
   
-  echo "${about//\$idade/${age}}" | less
+  echo "${about//\$idade/${age}}" | less -c
 
   return
 }
@@ -192,10 +192,53 @@ interface_projects() {
   local pos_x="4"
   local pos_y="3"
   set_cursor "${pos_y}" "${pos_x}"
-  echo -n "> In progress..."
+  echo -n "> Loading..."
   
   local l="${LINES}"
   local c="${COLUMNS}"
+  
+  local tmpfile=$(mktemp)
+  local url="${BASE_URL}/projects.txt"
+  local status_code=$(curl -s "${url}" -w "%{http_code}" -o $tmpfile)
+  local status=$? # Command status, if != 0, commands got an error
+
+  if (( "${status_code}" != "200" || "${status}" != "0" )); then
+    rm ${tmpfile}
+
+    local pos_x="4"
+    local pos_y="5"
+    set_cursor "${pos_y}" "${pos_x}"
+    echo -n "> Got an error"
+  
+    local footer="Press ENTER to continue"
+    local pos_x=$((c / 2))
+    local pos_x=$(( pos_x - ${#footer} / 2 ))
+    local pos_y="$((l - 1))"
+    set_cursor "${pos_y}" "${pos_x}"
+    echo -n "${footer}"
+  
+    local pos_x="4"
+    local pos_y=$((l- 4))
+    set_cursor "${pos_y}" "${pos_x}" 
+    read -p "Select > "
+
+    return
+  fi
+
+  local res=$(cat ${tmpfile})
+  rm ${tmpfile}
+  declare -a projects
+  n=1
+  local pos_x="4"
+  for project in ${res}; do
+    projects[${n}]=${project,,}
+    local pos_y=$((n * 2 + 1))
+    set_cursor "${pos_y}" "${pos_x}"
+    local name=${project//-/ }
+    echo -n "${n}) - ${name}"
+    ((n++))
+  done
+
 
   local footer="b - Back | q - Quit"
   local pos_x=$((c / 2))
@@ -206,10 +249,87 @@ interface_projects() {
     
   local pos_x="4"
   local pos_y=$((l- 4))
-  set_cursor "${pos_y}" "${pos_x}" 
-  read -p "Select > "
+  
+  while : ; do
+    set_cursor "${pos_y}" "${pos_x}"
+    read -p "Select > " choose
+    local choose=${choose// /} # Remove space
+    local choose=${choose,,} # Lowercase
+    case "${choose}" in
+      q)
+        echo -en "\033[2J" # Clear screen
+        echo -en "\033[0;0f" # Move cursor to the init of terminal
+        exit
+      ;;
+    
+      b)
+        break
+      ;;
+
+      *)
+        # Validate if input is a number
+        # Must be single bracket
+        [ -n "${choose}" ] && [ "${choose}" -eq "${choose}" ] 2>/dev/null
+        if [ $? -ne 0 ]; then
+          set_cursor "${pos_y}" "${pos_x}"
+          echo -n "              " # just to clear the previous text
+          continue
+        fi
+
+        if [[ "${choose:0:1}" == "0" || "${choose:0:1}" == "-" ]]; then # If number starts with 0 or - script crash
+          set_cursor "${pos_y}" "${pos_x}"
+          echo -n "              " # just to clear the previous text
+          continue
+        fi
+
+        if (( "${choose}" > ${#projects[@]} )); then
+          set_cursor "${pos_y}" "${pos_x}"
+          echo -n "              " # just to clear the previous text
+          continue
+        fi
+
+        local project=${projects[${choose}]}
+        if [[ -n ${project} ]]; then
+          set_cursor "${pos_y}" "${pos_x}"
+          echo -n "> Loading..."
+          show_project "${project}"
+          set_cursor "${pos_y}" "${pos_x}"
+          echo -n "              " # just to clear the previous text
+        fi
+      ;;
+    
+    esac
+  done
 
   return
+}
+
+show_project() {
+  local project="${1}"
+  local tmpfile=$(mktemp)
+  local url="${BASE_URL}/projects/${project}.txt"
+  local status_code=$(curl -s "${url}" -w "%{http_code}" -o $tmpfile)
+  local status=$? # Command status, if != 0, commands got an error
+
+  if (( "${status_code}" != "200" || "${status}" != "0" )); then
+    rm ${tmpfile}
+
+    local l=${LINES}
+    local pos_x="4"
+    local pos_y=$((l- 4))
+    set_cursor "${pos_y}" "${pos_x}"
+    echo -n "> Got an error"
+    sleep 2
+    set_cursor "${pos_y}" "${pos_x}"
+    echo -n "              " # just to clear the previous text
+    return
+  fi
+
+  local info=$(cat ${tmpfile})
+  rm ${tmpfile}
+  
+  echo "${info}" | less -c
+
 }
 
 interface_contact() {

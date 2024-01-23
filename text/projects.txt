@@ -1,0 +1,7 @@
+Paint-CLI
+FSSH
+EMPower
+X-Ray-Classification
+Scientific-Research
+LazyMoon
+Fatecnologia-Lab

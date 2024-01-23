@@ -1,0 +1,5 @@
+  EMPower
+
+Project using EMG sensor to Embedded Systems for Biomedical Engineering class
+
+Repository: https://github.com/Mewbi/EMPower

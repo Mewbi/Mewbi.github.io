@@ -1,0 +1,46 @@
+{
+  "projects": [
+    {
+      "name": "Paint CLI",
+      "description": "A paint that able you create images directly from terminal",
+      "url": "https://github.com/Mewbi/Paint-CLI",
+      "image": "/assets/paint-cli.png"
+    },
+    {
+      "name": "FSSH",
+      "description": "A simple way to manage your SSH connections",
+      "url": "https://github.com/Mewbi/fssh",
+      "image": "/assets/fssh.png"
+    },
+    {
+      "name": "EMPower",
+      "description": "Project using EMG sensor to Embedded Systems for Biomedical Engineering class",
+      "url": "https://github.com/Mewbi/EMPower",
+      "image": "/assets/empower.png"
+    },
+    {
+      "name": "X Ray Classification",
+      "description": "API using AI to classify torax X-Ray between 3 different diseases",
+      "url": "https://github.com/Mewbi/x-ray-classification",
+      "image": "/assets/x-ray-classification.png"
+    },
+    {
+      "name": "Scientific Research",
+      "description": "Scientific Research in applied mathematics about Optimization of Molecular Geometry",
+      "url": "https://github.com/Mewbi/ic",
+      "image": "/assets/ic.png"
+    },
+    {
+      "name": "LazyMoon",
+      "description": "Final project to techical course of Computer Network written in Shell Script, to manage and monitor your network",
+      "url": "https://github.com/Mewbi/lazymoon",
+      "image": "/assets/lazymoon.png"
+    },
+    {
+      "name": "Fatecnologia Lab",
+      "description": "A lab created to show in Fatecnologia event, about the usage of Rate Limit to mitigate DDoS attacks",
+      "url": "https://github.com/gocachebr/fatecnologia-lab",
+      "image": "/assets/fatecnologia-lab.png"
+    }
+  ]
+}

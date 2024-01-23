@@ -23,21 +23,21 @@
       </div>
 
       <div class="flex flex-col text-md bg-gray-100 border border-gray-700 rounded-br-md rounded-bl-md p-4">
-        <p class="pb-2">&emsp;Interessado em Shell Script e outras tecnologias CLI</p>
+        <p class="pb-2">&emsp;Interessed in code, math and CLI programs</p>
         <button id="opt-cli" onclick="show('cli')" class="text-justify">&emsp;> CLI</button>
-        <button id="opt-sobre-mim" onclick="show('sobre-mim')" class="text-justify">&emsp;> Sobre Mim</button>
-        <button id="opt-projetos" onclick="show('projetos')" class="text-justify">&emsp;> Projetos</button>
-        <a href="artigos/index.html" style="pointer-events: none">&emsp;> <s>Artigos</s></a>
-        <a href="pensamentos/index.html" style="pointer-events: none">&emsp;> <s>Pensamentos</s></a>
+        <button id="opt-about-me" onclick="show('about-me')" class="text-justify">&emsp;> About me</button>
+        <button id="opt-projects" onclick="show('projects')" class="text-justify">&emsp;> Projects</button>
+        <a href="artigos/index.html" style="pointer-events: none">&emsp;> <s>Articles</s></a>
+        <a href="pensamentos/index.html" style="pointer-events: none">&emsp;> <s>Thoughts</s></a>
 
         <div id="cli" class="hidden text-justify pt-4">
-          <p>Ver o portfólio por uma página Web é um pouco tedioso. Por que não visualizar ele pelo seu terminal Linux?
-          </p>
+          <p>Read this portfolio in Web browser is quite boring. Why not trying it in your Linux terminal?</p>
           <br>
-          <p>Para isso, execute o seguinte comando em seu terminal:</p>
+          <p>To do that, execute the following command in your terminal:</p>
           <br>
           <code
-            class="text-sm sm:text-base inline-flex text-left items-center space-x-4 bg-black opacity-70 text-white rounded-lg p-4 pl-6">
+            class="max-w-full text-sm sm:text-base inline-flex text-left items-center space-x-4 bg-black opacity-70 text-white rounded-lg p-4 pl-6"
+            style="overflow-wrap: anywhere;">
             <span class="flex gap-4">
               <span class="shrink-0 text-gray-500">
                 $
@@ -67,125 +67,9 @@
           </code>
         </div>
 
-        <div id="sobre-mim" class="hidden text-justify pt-4"></div>
+        <div id="about-me" class="hidden text-justify pt-4"></div>
 
-        <div id="projetos" class="hidden text-justify pt-4 divide-y divide-black">
-          <div class="flex flex-row">
-            <div class="flex flex-col my-auto pl-3 w-full">
-              <a class="pb-2" target="_blank" href="https://github.com/Mewbi/Paint-CLI">> Paint CLI <i
-                  class="fab fa-github"></i></a>
-              <p>&emsp;&emsp;Um paint que permite que seja feito desenhos diretamente via terminal</p>
-            </div>
-            <div class="flex flex-col my-auto p-3 w-1/3">
-              <img src="/assets/paint-cli.png">
-            </div>
-          </div>
-
-          <div class="flex flex-row">
-            <div class="flex flex-col my-auto pl-3 w-full">
-              <a class="pb-2" target="_blank" href="https://github.com/Mewbi/fssh">> FSSH <i
-                  class="fab fa-github"></i></a>
-              <p>&emsp;&emsp;Uma maneira simples de gerenciar suas conexões SSH</p>
-            </div>
-            <div class="flex flex-col my-auto p-3 w-1/3">
-              <img src="/assets/fssh.png">
-            </div>
-          </div>
-
-          <div class="flex flex-row">
-            <div class="flex flex-col my-auto p-3 w-full">
-              <a class="pb-2" target="_blank" href="https://github.com/Mewbi/LazyMoon">> Lazy Moon <i
-                  class="fab fa-github"></i></a>
-              <p>&emsp;&emsp;Projeto de TCC do curso técnico de Redes de Computadores no SENAI</p>
-              <p>&emsp;&emsp;Consiste em um conjunto de scripts de monitoramento e gerenciamento de rede LAN que pode
-                ser acessado por redes externas (WAN)</p>
-            </div>
-            <div class="flex flex-col my-auto p-3 w-1/3">
-              <img src="/assets/lazymoon.png">
-            </div>
-          </div>
-
-          <div class="flex flex-row">
-            <div class="flex flex-col my-auto p-3 w-full">
-              <a class="pb-2" target="_blank" href="https://github.com/Mewbi/Radio-Terminal">> Rádio Terminal <i
-                  class="fab fa-github"></i></a>
-              <p>&emsp;&emsp;Criado para ouvir músicas de rádios online com interface CLI feita em bash</p>
-              <P>&emsp;&emsp;Possui versão simplória sem interface para ser executada via cmd do Windows</P>
-            </div>
-            <div class="flex flex-col my-auto p-3 w-1/3">
-              <img src="/assets/radio-terminal.png">
-            </div>
-          </div>
-
-          <div class="flex flex-row">
-            <div class="flex flex-col my-auto p-3 w-full">
-              <a class="pb-2" target="_blank" href="https://github.com/Mewbi/Diario-Shell-Script">> Diário SH <i
-                  class="fab fa-github"></i></a>
-              <p>&emsp;&emsp;Realiza a criação e organização de um diário, fornecendo serviço de backup utilizando um
-                e-mail para salvar</p>
-            </div>
-            <div class="flex flex-col my-auto p-3 w-1/3">
-              <img src="/assets/diario.png">
-            </div>
-          </div>
-
-          <div class="flex flex-row">
-            <div class="flex flex-col my-auto p-3 w-full">
-              <a class="pb-2" target="_blank" href="https://github.com/Mewbi/Guess-Number-Multiplayer">> Guess Number <i
-                  class="fab fa-github"></i></a>
-              <p>&emsp;&emsp;Jogo Guess Number feito para se jogar single player ou multiplayer LAN</p>
-            </div>
-            <div class="flex flex-col my-auto p-3 w-1/3">
-              <img src="/assets/guess-number.png">
-            </div>
-          </div>
-
-          <div class="flex flex-row">
-            <div class="flex flex-col my-auto p-3 w-full">
-              <a class="pb-2" target="_blank" href="https://github.com/Mewbi/Tic-Tac-Toe">> Tic Tac Toe <i
-                  class="fab fa-github"></i></a>
-              <p>&emsp;&emsp;Jogo "Tic Tac Toe", ou "Jogo da Velha" feito em C++ sendo jogado no terminal entre duas
-                pessoas localmente</p>
-            </div>
-            <div class="flex flex-col my-auto p-3 w-1/3">
-              <img src="/assets/tic-tac-toe.png">
-            </div>
-          </div>
-
-          <div class="flex flex-row">
-            <div class="flex flex-col my-auto p-3 w-full">
-              <a class="pb-2" target="_blank" href="https://github.com/Mewbi/Jokenpo">> Jokenpô <i
-                  class="fab fa-github"></i></a>
-              <p>&emsp;&emsp;Jogo jokenpô (ou pedra papel tesoura) feito em Shell Script para ser jogado via terminal
-              </p>
-            </div>
-            <div class="flex flex-col my-auto p-3 w-1/3">
-              <img src="/assets/jokenpo.png">
-            </div>
-          </div>
-
-          <div class="flex flex-row">
-            <div class="flex flex-col my-auto p-3 w-full">
-              <a class="pb-2" target="_blank" href="https://github.com/Mewbi/Backup-terminal">> Backup Terminal <i
-                  class="fab fa-github"></i></a>
-              <p>&emsp;&emsp;Uma maneira simples de realizer o backup de um arquivo para um e-mail via terminal</p>
-            </div>
-            <div class="flex flex-col my-auto p-3 w-1/3">
-              <img src="/assets/backup-terminal.png">
-            </div>
-          </div>
-
-          <div class="flex flex-row">
-            <div class="flex flex-col my-auto p-3 w-full">
-              <a class="pb-2" target="_blank" href="https://github.com/Mewbi/Matematica">> Matemática <i
-                  class="fab fa-github"></i></a>
-              <p>&emsp;&emsp;Coletânea de mini programas que realizam processos matemáticos</p>
-            </div>
-            <div class="flex flex-col my-auto p-3 w-1/3">
-              <img src="/assets/matematica.png">
-            </div>
-          </div>
-        </div>
+        <div id="projects" class="hidden text-justify pt-4 divide-y divide-black"></div>
 
       </div>
     </div>

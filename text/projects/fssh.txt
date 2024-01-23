@@ -1,0 +1,5 @@
+  FSSH
+
+A simple way to manage your SSH connections
+
+Repository: https://github.com/Mewbi/fssh
